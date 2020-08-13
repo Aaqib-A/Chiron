@@ -40,9 +40,6 @@ style = Style(root)
 style.configure('TLabel', background=bg_color)
 style.configure('TFrame', background=bg_color)
 
-
-
-
 #=========================== Clock Module ===========================#
 
 clock = Frame(root)
@@ -145,8 +142,24 @@ p_track()
 
 #=========================== Timer  ===========================#
 
+#from Scripts.Counter import *
+
 
 #=========================== Timer  ===========================#
 
+
+#=========================== CPU Stats  ===========================#
+from Scripts.CPU_stats import *
+
+boot_time_frame = Frame(root)
+boot_time_frame.pack(anchor = S)
+boot_text = "Boot Time: {}".format(boot_time())
+#print(boot_text)
+
+boot_time_label = Label(boot_time_frame, font = ('calibri', 10, 'bold'), foreground = font_color) 
+boot_time_label.config(text = boot_text)
+boot_time_label.grid(row = 0, column = 0)
+
+#=========================== CPU Stats  ===========================#
 
 mainloop() 
